@@ -6,16 +6,16 @@ import pandas as pd
 
 def get_meta_data(category_id):
     meta_data_map = {
-        "1": {"meta_title": "Tractor", "meta_description": "Buy and Sell Used Tractors"},
-        "3": {"meta_title": "Goods Vehicle", "meta_description": "Buy and Sell Used Goods Vehicles"},
-        "4": {"meta_title": "Harvester", "meta_description": "Buy and Sell Used Harvesters"},
-        "5": {"meta_title": "Implements", "meta_description": "Buy and Sell Agricultural Implements"},
-        "6": {"meta_title": "Seeds", "meta_description": "Buy and Sell Agricultural Seeds"},
-        "7": {"meta_title": "Tyres", "meta_description": "Buy and Sell Agricultural Tyres"},
-        "8": {"meta_title": "Pesticides", "meta_description": "Buy and Sell Agricultural Pesticides"},
-        "9": {"meta_title": "Fertilizers", "meta_description": "Buy and Sell Agricultural Fertilizers"},
+        "1": {"meta_title": "Tractor", "meta_description": "Sell new Tractors"},
+        "3": {"meta_title": "Goods Vehicle", "meta_description": "Sell new Goods Vehicles"},
+        "4": {"meta_title": "Harvester", "meta_description": "Sell new Harvesters"},
+        "5": {"meta_title": "Implements", "meta_description": "Sell Agricultural Implements"},
+        "6": {"meta_title": "Seeds", "meta_description": "Sell Agricultural Seeds"},
+        "7": {"meta_title": "Tyres", "meta_description": "Sell Agricultural Tyres"},
+        "8": {"meta_title": "Pesticides", "meta_description": "Sell Agricultural Pesticides"},
+        "9": {"meta_title": "Fertilizers", "meta_description": "Sell Agricultural Fertilizers"},
     }
-    return meta_data_map.get(category_id, {"meta_title": "Product", "meta_description": "Buy and Sell Products"})
+    return meta_data_map.get(category_id, {"meta_title": "Product", "meta_description": "Sell Products"})
 
 def generate_slug(description):
     # Clean the description by removing spaces and special characters, keeping only alphanumeric characters
@@ -24,7 +24,7 @@ def generate_slug(description):
     # Limit the cleaned description to 20 characters
     #clean_slug = clean_slug[:20]
     
-    # Generate a random 5-character alphanumeric string
+    # Generate a random 15-character alphanumeric string
     random_string = ''.join(random.choices(string.ascii_uppercase + string.digits, k=15))
     
     # Combine the cleaned description with the random string to form the slug
