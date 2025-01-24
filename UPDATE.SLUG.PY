@@ -1,3 +1,5 @@
+import random
+import string
 import tkinter as tk
 from datetime import datetime
 import pandas as pd
@@ -15,9 +17,28 @@ def get_meta_data(category_id):
     }
     return meta_data_map.get(category_id, {"meta_title": "Product", "meta_description": "Buy and Sell Products"})
 
+def generate_slug(description):
+    # Clean the description by removing spaces and special characters, keeping only alphanumeric characters
+    clean_slug = ''.join(e for e in description if e.isalnum())
+    
+    # Limit the cleaned description to 20 characters
+    #clean_slug = clean_slug[:20]
+    
+    # Generate a random 5-character alphanumeric string
+    random_string = ''.join(random.choices(string.ascii_uppercase + string.digits, k=15))
+    
+    # Combine the cleaned description with the random string to form the slug
+    slug = f"{clean_slug}/{random_string}"
+    
+    # Ensure the length of the final slug is within 55 characters
+    return slug[:45]
+
 def generate_sql_insert_statement(data, last_id):
     next_id = last_id + 1
     meta_data = get_meta_data(data['category_id']) 
+
+    # Generate slug from description
+    slug = generate_slug(data['description'])
 
     sql = f"""
     INSERT INTO krishivikas_kvlive.tractor (
@@ -30,7 +51,7 @@ def generate_sql_insert_statement(data, last_id):
         '{data['brand_id']}', '{data['model_id']}', '{data['year_of_purchase']}', 
         '{data['title']}', '0', '0', 'NA', '{data['description']}', '{data['price']}', 
         '1', '1', '{data['state_id']}', '{data['district_id']}', '{data['city_id']}', 
-        '{data['pincode']}', '{data['latlong']}', '0', 'tractor', 
+        '{data['pincode']}', '{data['latlong']}', '0', '{slug}', 
         '{meta_data['meta_title']}', '{meta_data['meta_description']}', 
         '{data['created_at']}', '{data['created_at']}'
     );
