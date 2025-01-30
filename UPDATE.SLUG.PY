@@ -42,7 +42,7 @@ def generate_sql_insert_statement(data, last_id):
 
     sql = f"""
     INSERT INTO krishivikas_kvlive.tractor (
-        id, category_id, user_id, set, type, brand_id, model_id, year_of_purchase, 
+        id, category_id, user_id, `set`, type, brand_id, model_id, year_of_purchase, 
         title, rc_available, noc_available, registration_no, description, price, 
         is_negotiable, country_id, state_id, district_id, city_id, pincode, 
         latlong, status, slug, meta_title, meta_description, created_at, updated_at

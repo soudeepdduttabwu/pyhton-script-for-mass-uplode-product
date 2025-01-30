@@ -1,0 +1,176 @@
+
+    INSERT INTO krishivikas_kvlive.tractor (
+        id, category_id, user_id, set, type, brand_id, model_id, year_of_purchase, 
+        title, rc_available, noc_available, registration_no, description, price, 
+        is_negotiable, country_id, state_id, district_id, city_id, pincode, 
+        latlong, status, slug, meta_title, meta_description, created_at, updated_at
+    ) VALUES (
+        '2382', '1', '85414', 'sell', 'new', 
+        '104', '1048', '2025', 
+        'Massey Ferguson MF 9563 4WD', '0', '0', 'NA', 'Massey Ferguson MF 9563 4WDHP 51+ Front Tire 9.5x24 Rear Tire 16.9x28 RPM 540', '1650000', 
+        '1', '1', '37', '719', '16454', 
+        '736121', '23.2665,84.553', '0', 'MasseyFergusonMF95634WDHP51FrontTire95x24Rear', 
+        'Tractor', 'Sell new Tractors', 
+        '2025-01-30 15:26:00', '2025-01-30 15:26:00'
+    );
+    
+
+    INSERT INTO krishivikas_kvlive.tractor (
+        id, category_id, user_id, set, type, brand_id, model_id, year_of_purchase, 
+        title, rc_available, noc_available, registration_no, description, price, 
+        is_negotiable, country_id, state_id, district_id, city_id, pincode, 
+        latlong, status, slug, meta_title, meta_description, created_at, updated_at
+    ) VALUES (
+        '2383', '1', '85414', 'sell', 'new', 
+        '104', '1048', '2025', 
+        'Massey Ferguson MF 9563 2WD', '0', '0', 'NA', 'Massey Ferguson MF 9563 2WDHP 51+ Front Tire 7.5x16 Rear Tire 16.9x28 RPM 540', '1530000', 
+        '1', '1', '37', '719', '16454', 
+        '736121', '23.2665,84.553', '0', 'MasseyFergusonMF95632WDHP51FrontTire75x16Rear', 
+        'Tractor', 'Sell new Tractors', 
+        '2025-01-30 15:26:00', '2025-01-30 15:26:00'
+    );
+    
+
+    INSERT INTO krishivikas_kvlive.tractor (
+        id, category_id, user_id, set, type, brand_id, model_id, year_of_purchase, 
+        title, rc_available, noc_available, registration_no, description, price, 
+        is_negotiable, country_id, state_id, district_id, city_id, pincode, 
+        latlong, status, slug, meta_title, meta_description, created_at, updated_at
+    ) VALUES (
+        '2384', '1', '85414', 'sell', 'new', 
+        '104', '1048', '2025', 
+        'Massey Ferguson MF 8055 MagnaTrak', '0', '0', 'NA', 'Massey Ferguson MF 8055 MagnaTrakHP 50 Front Tire 7.5x16 Rear Tire 16.9x28 RPM 540   | MAXX OIB / MF Duracool Brakes', '1335000', 
+        '1', '1', '37', '719', '16454', 
+        '736121', '23.2665,84.553', '0', 'MasseyFergusonMF8055MagnaTrakHP50FrontTire75x', 
+        'Tractor', 'Sell new Tractors', 
+        '2025-01-30 15:26:00', '2025-01-30 15:26:00'
+    );
+    
+
+    INSERT INTO krishivikas_kvlive.tractor (
+        id, category_id, user_id, set, type, brand_id, model_id, year_of_purchase, 
+        title, rc_available, noc_available, registration_no, description, price, 
+        is_negotiable, country_id, state_id, district_id, city_id, pincode, 
+        latlong, status, slug, meta_title, meta_description, created_at, updated_at
+    ) VALUES (
+        '2385', '1', '85414', 'sell', 'new', 
+        '104', '1048', '2025', 
+        'Massey Ferguson MF 7250 DI 2WD', '0', '0', 'NA', 'Massey Ferguson MF 7250 DI 2WDHP 50 Front Tire 6.00x16 Rear Tire 13.6x28 RPM 540  | Oil Immersed Brakes', '1087000', 
+        '1', '1', '37', '719', '16454', 
+        '736121', '23.2665,84.553', '0', 'MasseyFergusonMF7250DI2WDHP50FrontTire600x16R', 
+        'Tractor', 'Sell new Tractors', 
+        '2025-01-30 15:26:00', '2025-01-30 15:26:00'
+    );
+    
+
+    INSERT INTO krishivikas_kvlive.tractor (
+        id, category_id, user_id, set, type, brand_id, model_id, year_of_purchase, 
+        title, rc_available, noc_available, registration_no, description, price, 
+        is_negotiable, country_id, state_id, district_id, city_id, pincode, 
+        latlong, status, slug, meta_title, meta_description, created_at, updated_at
+    ) VALUES (
+        '2386', '1', '85414', 'sell', 'new', 
+        '104', '1048', '2025', 
+        'Massey Ferguson MF 7250 Power 2WD', '0', '0', 'NA', 'Massey Ferguson MF 7250 Power 2WDHP 46 Front Tire 7.5x16 Rear Tire 14.9x28 RPM 540   | Oil Immersed Brake', '1050000', 
+        '1', '1', '37', '719', '16454', 
+        '736121', '23.2665,84.553', '0', 'MasseyFergusonMF7250Power2WDHP46FrontTire75x1', 
+        'Tractor', 'Sell new Tractors', 
+        '2025-01-30 15:26:00', '2025-01-30 15:26:00'
+    );
+    
+
+    INSERT INTO krishivikas_kvlive.tractor (
+        id, category_id, user_id, set, type, brand_id, model_id, year_of_purchase, 
+        title, rc_available, noc_available, registration_no, description, price, 
+        is_negotiable, country_id, state_id, district_id, city_id, pincode, 
+        latlong, status, slug, meta_title, meta_description, created_at, updated_at
+    ) VALUES (
+        '2387', '1', '85414', 'sell', 'new', 
+        '104', '1048', '2025', 
+        'Massey Ferguson 254 DynaSmart 4WD', '0', '0', 'NA', 'Massey Ferguson 254 DynaSmart 4WDHP 50 Front Tire 8x18 Rear Tire 14.9x28 RPM 540     | Oil Immersed Brakes', '1395000', 
+        '1', '1', '37', '719', '16454', 
+        '736121', '23.2665,84.553', '0', 'MasseyFerguson254DynaSmart4WDHP50FrontTire8x1', 
+        'Tractor', 'Sell new Tractors', 
+        '2025-01-30 15:26:00', '2025-01-30 15:26:00'
+    );
+    
+
+    INSERT INTO krishivikas_kvlive.tractor (
+        id, category_id, user_id, set, type, brand_id, model_id, year_of_purchase, 
+        title, rc_available, noc_available, registration_no, description, price, 
+        is_negotiable, country_id, state_id, district_id, city_id, pincode, 
+        latlong, status, slug, meta_title, meta_description, created_at, updated_at
+    ) VALUES (
+        '2388', '1', '85414', 'sell', 'new', 
+        '104', '1048', '2025', 
+        'Massey Ferguson MF 246 DYNATRACK 4WD', '0', '0', 'NA', 'Massey Ferguson MF 246 DYNATRACK 4WDHP 50 Front Tire 8.00x18 Rear Tire 14.9x28 RPM 540 Multi disc oil immersed brakes', '1330000', 
+        '1', '1', '37', '719', '16454', 
+        '736121', '23.2665,84.553', '0', 'MasseyFergusonMF246DYNATRACK4WDHP50FrontTire8', 
+        'Tractor', 'Sell new Tractors', 
+        '2025-01-30 15:26:00', '2025-01-30 15:26:00'
+    );
+    
+
+    INSERT INTO krishivikas_kvlive.tractor (
+        id, category_id, user_id, set, type, brand_id, model_id, year_of_purchase, 
+        title, rc_available, noc_available, registration_no, description, price, 
+        is_negotiable, country_id, state_id, district_id, city_id, pincode, 
+        latlong, status, slug, meta_title, meta_description, created_at, updated_at
+    ) VALUES (
+        '2389', '1', '85414', 'sell', 'new', 
+        '104', '1048', '2025', 
+        'Massey Ferguson MF 7235 2WD', '0', '0', 'NA', 'Massey Ferguson MF 7235 2WDHP 35 Front Tire 6x16 Rear Tire 12.4x28/13.6x28 RPM 540 RPM & 1000 RPM - Optional Multi disc oil immersed brakes', '850000', 
+        '1', '1', '37', '719', '16454', 
+        '736121', '23.2665,84.553', '0', 'MasseyFergusonMF72352WDHP35FrontTire6x16RearT', 
+        'Tractor', 'Sell new Tractors', 
+        '2025-01-30 15:26:00', '2025-01-30 15:26:00'
+    );
+    
+
+    INSERT INTO krishivikas_kvlive.tractor (
+        id, category_id, user_id, set, type, brand_id, model_id, year_of_purchase, 
+        title, rc_available, noc_available, registration_no, description, price, 
+        is_negotiable, country_id, state_id, district_id, city_id, pincode, 
+        latlong, status, slug, meta_title, meta_description, created_at, updated_at
+    ) VALUES (
+        '2390', '1', '85414', 'sell', 'new', 
+        '104', '1048', '2025', 
+        'Massey Ferguson MF 1035 2WD', '0', '0', 'NA', 'Massey Ferguson MF 1035 2WDHP 35 Front Tire 6x16 Rear Tire 13.6x28 RPM 540 RPM @ 1500 ERPM Dry Brake', '885000', 
+        '1', '1', '37', '719', '16454', 
+        '736121', '23.2665,84.553', '0', 'MasseyFergusonMF10352WDHP35FrontTire6x16RearT', 
+        'Tractor', 'Sell new Tractors', 
+        '2025-01-30 15:26:00', '2025-01-30 15:26:00'
+    );
+    
+
+    INSERT INTO krishivikas_kvlive.tractor (
+        id, category_id, user_id, set, type, brand_id, model_id, year_of_purchase, 
+        title, rc_available, noc_available, registration_no, description, price, 
+        is_negotiable, country_id, state_id, district_id, city_id, pincode, 
+        latlong, status, slug, meta_title, meta_description, created_at, updated_at
+    ) VALUES (
+        '2391', '1', '85414', 'sell', 'new', 
+        '104', '1048', '2025', 
+        'Massey Ferguson MF 5225 2WD', '0', '0', 'NA', 'Massey Ferguson MF 5225 2WDHP 25 Front Tire 5.25x14 Rear Tire 8.3x24 RPM 540 RPM @ 2200 ERPM, 540 RPM Eco @ 1642 ERPM Multi disc oil immersed brakes', '625000', 
+        '1', '1', '37', '719', '16454', 
+        '736121', '23.2665,84.553', '0', 'MasseyFergusonMF52252WDHP25FrontTire525x14Rea', 
+        'Tractor', 'Sell new Tractors', 
+        '2025-01-30 15:26:00', '2025-01-30 15:26:00'
+    );
+    
+
+    INSERT INTO krishivikas_kvlive.tractor (
+        id, category_id, user_id, set, type, brand_id, model_id, year_of_purchase, 
+        title, rc_available, noc_available, registration_no, description, price, 
+        is_negotiable, country_id, state_id, district_id, city_id, pincode, 
+        latlong, status, slug, meta_title, meta_description, created_at, updated_at
+    ) VALUES (
+        '2392', '1', '85414', 'sell', 'new', 
+        '104', '1048', '2025', 
+        'Massey Ferguson MF 5118 2WD', '0', '0', 'NA', 'Massey Ferguson MF 5118 2WDHP 18 Front Tire 4.75x14 Rear Tire 8x18 RPM 540 RPM Multi disc oil immersed brakes', '520000', 
+        '1', '1', '37', '719', '16454', 
+        '736121', '23.2665,84.553', '0', 'MasseyFergusonMF51182WDHP18FrontTire475x14Rea', 
+        'Tractor', 'Sell new Tractors', 
+        '2025-01-30 15:26:00', '2025-01-30 15:26:00'
+    );
+    
