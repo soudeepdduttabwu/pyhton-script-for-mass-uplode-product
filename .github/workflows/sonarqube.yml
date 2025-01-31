@@ -17,7 +17,7 @@ jobs:
         java-version: '11'
     - name: Build with Maven
       run: mvn clean install 
-      working-directory: C:\Users\CAPTAIN\Desktop\pyhton-script-for-mass-uplode-product\UPDATE.SLUG.PY
+      working-directory: UPDATE.SLUG.PY
     - name: SonarQube Scan
       uses: sonarsource/sonarqube-scan-action@master
       with:
