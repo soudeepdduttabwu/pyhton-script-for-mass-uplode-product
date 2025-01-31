@@ -1,67 +1,53 @@
-name: Python CI with SonarQube  # Name of the workflow
+name: Python CI with SonarQube
 
-# Define events that trigger the workflow
 on:
   push:
     branches:
-      - main  # Trigger workflow on push to the main branch
+      - main
   pull_request:
     branches:
-      - main  # Trigger workflow on pull request to the main branch
+      - main
 
 jobs:
   sonarqube:
-    name: Run SonarQube Analysis  # Name of the job
-    runs-on: ubuntu-latest  # Use the latest Ubuntu runner
+    name: Run SonarQube Analysis
+    runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the code from the repository
       - name: Checkout code
-        uses: actions/checkout@v2  # This step checks out your code to the GitHub runner
+        uses: actions/checkout@v2
 
-      # Step 2: Set up Python environment
       - name: Set up Python
-        uses: actions/setup-python@v2  # Action to set up the Python environment
+        uses: actions/setup-python@v2
         with:
-          python-version: '3.x'  # Specify the version of Python to use (e.g., 3.x)
+          python-version: '3.x'
 
-      # Step 3: Install the Python project dependencies
       - name: Install dependencies
         run: |
           pip install -r requirements.txt  # Install all the dependencies listed in requirements.txt
 
-      # Step 4: Install the SonarQube Scanner
       - name: Install SonarQube Scanner
         run: |
-          # Download SonarQube Scanner from the official source
           curl -sSLo sonarqube-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
-          
-          # Unzip the SonarQube Scanner
           unzip sonar-scanner.zip
-          
-          # Move the unzipped folder to a more accessible directory
           mv sonar-scanner-*/ sonar-scanner/
 
-      # Step 5: Run the SonarQube analysis
       - name: Run SonarQube scanner
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # Use GitHub Secrets to securely access your SonarQube token
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          # Run the SonarQube analysis with the appropriate project key and configuration
           ./sonar-scanner/bin/sonar-scanner \
-            -Dsonar.projectKey=your_project_key  # Replace with your actual SonarQube project key
-            -Dsonar.sources=.  # Specifies the source code directory to analyze (current directory in this case)
-            -Dsonar.python.coverage.reportPaths=coverage.xml  # Optional: Coverage report path if you have one
-            -Dsonar.host.url=https://your.sonarqube.server  # URL of your SonarQube instance
+            -Dsonar.projectKey=your_project_key \
+            -Dsonar.sources=. \
+            -Dsonar.python.coverage.reportPaths=coverage.xml \
+            -Dsonar.host.url=https://your.sonarqube.server
 
-      # Step 6: Upload coverage to SonarQube (optional)
       - name: Upload coverage to SonarQube
-        if: success()  # Only upload coverage if the previous steps were successful
+        if: success()
         run: |
-          # Send the coverage report to SonarQube (if necessary)
           curl -u ${SONAR_TOKEN}: \
             -X POST \
-            -d "projectKey=your_project_key"  # Replace with your actual SonarQube project key
-            -d "branch=main"  # Specify the branch name (e.g., 'main')
-            -d "file=coverage.xml"  # Path to the coverage file
-            https://your.sonarqube.server/api/ce/submit  # Replace with your SonarQube server URL
+            -d "projectKey=your_project_key" \
+            -d "branch=main" \
+            -d "file=coverage.xml" \
+            https://your.sonarqube.server/api/ce/submit
