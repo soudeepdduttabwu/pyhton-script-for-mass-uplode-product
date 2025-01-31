@@ -1,53 +1,29 @@
-name: Python CI with SonarQube
-
+name: CI/CD workflow for Maven Build and Sonar Code scan
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
-
+  workflow_dispatch:
 jobs:
-  sonarqube:
-    name: Run SonarQube Analysis
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: |
-          pip install -r requirements.txt  # Install all the dependencies listed in requirements.txt
-
-      - name: Install SonarQube Scanner
-        run: |
-          curl -sSLo sonarqube-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
-          unzip sonar-scanner.zip
-          mv sonar-scanner-*/ sonar-scanner/
-
-      - name: Run SonarQube scanner
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: |
-          ./sonar-scanner/bin/sonar-scanner \
-            -Dsonar.projectKey=your_project_key \
-            -Dsonar.sources=. \
-            -Dsonar.python.coverage.reportPaths=coverage.xml \
-            -Dsonar.host.url=https://your.sonarqube.server
-
-      - name: Upload coverage to SonarQube
-        if: success()
-        run: |
-          curl -u ${SONAR_TOKEN}: \
-            -X POST \
-            -d "projectKey=your_project_key" \
-            -d "branch=main" \
-            -d "file=coverage.xml" \
-            https://your.sonarqube.server/api/ce/submit
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Set up JDK 11
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '11'
+    - name: Build with Maven
+      run: mvn clean install -f MyWebApp/pom.xml
+    - name: SonarQube Scan
+      uses: sonarsource/sonarqube-scan-action@master
+      with:
+        projectBaseDir: .
+        args: >
+          -Dsonar.organization=my-org
+          -Dsonar.projectKey=my-Java-web-app
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
