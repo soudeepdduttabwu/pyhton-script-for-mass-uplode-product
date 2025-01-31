@@ -1,0 +1,55 @@
+name: Python CI with SonarQube
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  sonarqube:
+    name: Run SonarQube Analysis
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # Use the required Python version
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: Install SonarQube Scanner
+        run: |
+          # Download SonarQube Scanner
+          curl -sSLo sonarqube-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.6.2.2472-linux.zip
+          unzip sonar-scanner.zip
+          mv sonar-scanner-*/ sonar-scanner/
+
+      - name: Run SonarQube scanner
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  # The SonarQube token as a secret
+        run: |
+          ./sonar-scanner/bin/sonar-scanner \
+            -Dsonar.projectKey=your_project_key \
+            -Dsonar.sources=. \
+            -Dsonar.python.coverage.reportPaths=coverage.xml \
+            -Dsonar.host.url=https://your.sonarqube.server
+
+      - name: Upload coverage to SonarQube
+        if: success()  # Only upload coverage if previous steps succeed
+        run: |
+          curl -u ${SONAR_TOKEN}: \
+            -X POST \
+            -d "projectKey=your_project_key" \
+            -d "branch=main" \
+            -d "file=coverage.xml" \
+            https://your.sonarqube.server/api/ce/submit
