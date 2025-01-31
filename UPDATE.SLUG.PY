@@ -4,6 +4,21 @@ import tkinter as tk
 from datetime import datetime
 import pandas as pd
 
+def create_requirements_file():
+    try:
+        # Define required libraries and their versions
+        requirements = [
+            'pandas==1.5.3',  # Adjust version based on your environment
+            'tkinter'  # Tkinter is typically included with Python, but if you need to explicitly mention it, add it here.
+        ]
+        
+        with open('requirements.txt', 'w') as f:
+            for package in requirements:
+                f.write(package + "\n")
+        print("requirements.txt has been created successfully.")
+    except Exception as e:
+        print(f"Error creating requirements.txt: {e}")
+
 def get_meta_data(category_id):
     meta_data_map = {
         "1": {"meta_title": "Tractor", "meta_description": "Sell new Tractors"},
@@ -172,5 +187,8 @@ submit_button.grid(row=11, column=0, columnspan=2)
 
 result_label = tk.Label(window, text="")
 result_label.grid(row=12, column=0, columnspan=2)
+
+# Call create_requirements_file() to create the requirements.txt file
+create_requirements_file()
 
 window.mainloop()
